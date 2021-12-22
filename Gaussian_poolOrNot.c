@@ -35,7 +35,6 @@ const uint dataN= DATA_N;
                  
 enum modelNames{ POOLED, DIFFER };
                 
-const uint dataRepeatNum=  5;
 const uint sampleRepeatNum= 2000000;
 
 
@@ -97,8 +96,6 @@ double cdfInv_gamma[CDF_GAMMA_N];  const double cdf_gamma_n= CDF_GAMMA_N;
 double cdfInv_JBeta[CDF_JBETA_N];  const double cdf_JBeta_n= CDF_JBETA_N;
 
 void cdfInv_precompute(){
-  /* for( uint i= 0; i < cdfInv_Gauss_n; ++i  { */
-  /*     cdfInv_Gauss[i]=  */
   double x;
   // Since Normal range is unbounded, precompute cdfInv for vals:  ¹⁄₍ₙ₊₁₎...ⁿ⁄₍ₙ₊₁₎
   for(  uint i= 0; i < cdf_Gauss_n; ++i  ){
