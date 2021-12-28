@@ -140,7 +140,7 @@ double data_prob_1component_bySumming(){
       Gauss_params cur_params= {mu, sigma};
       double curProb= 1.0;
       for(  uint d= 0;  d < dataN;  ++d  ){
-        double newProb= GSLfun_ran_gaussian_pdf( (data[d]-mu), cur_params );
+        double newProb= GSLfun_ran_gaussian_pdf( data[d], cur_params );
         curProb *= newProb;
       }
       prob_total += curProb;
@@ -167,8 +167,8 @@ double data_prob_2component_bySumming(){
             double mixCof= cdfInv_JBeta[mi];
             double curProb= 1.0;
             for(  uint d= 0;  d < dataN;  ++d  ){
-              double newProb=  mixCof  * GSLfun_ran_gaussian_pdf( (data[d]-mu1), cur_params1 )
-                +           (1-mixCof) * GSLfun_ran_gaussian_pdf( (data[d]-mu2), cur_params2 );
+              double newProb=  mixCof  * GSLfun_ran_gaussian_pdf( data[d], cur_params1 )
+                +           (1-mixCof) * GSLfun_ran_gaussian_pdf( data[d], cur_params2 );
               curProb *= newProb;
             }
             prob_total += curProb;
