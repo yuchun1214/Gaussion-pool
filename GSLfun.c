@@ -19,7 +19,7 @@ double GSLfun_ran_beta( double a, double b ){
 }
 
 double GSLfun_ran_beta_Jeffreys(){
-  gsl_ran_beta( gslRNG, 0.5, 0.5 );
+  return  gsl_ran_beta( gslRNG, 0.5, 0.5 );
 }
 
 uint   GSLfun_ran_binomial( double p, uint n ){
